@@ -2,6 +2,10 @@ package com.example.docs.fluid.custom;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
@@ -12,75 +16,35 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
+import org.jspecify.annotations.Nullable;
+import net.minecraft.util.RandomSource;
 
 public abstract class TutorialFluid extends FlowingFluid {
-	/**
-	 * @return whether the given fluid an instance of this fluid
-	 */
-	@Override
-	public boolean isSame(Fluid fluid) {
-		return fluid == getSource() || fluid == getFlowing();
-	}
- 
-	/**
-	 * @return whether the fluid is infinite (which means can be infinitely created like water). In vanilla, it depends on the game rule.
-	 */
-	@Override
-	protected boolean isInfinite() {
-		return false;
-	}
- 
-	/**
-	 * Perform actions when the fluid flows into a replaceable block. Water drops
-	 * the block's loot table. Lava plays the "block.lava.extinguish" sound.
-	 */
-	@Override
-	protected void beforeDestroyingBlock(LevelAccessor world, BlockPos pos, BlockState state) {
-		final BlockEntity blockEntity = state.hasBlockEntity() ? world.getBlockEntity(pos) : null;
-		Block.dropResources(state, world, pos, blockEntity);
-	}
- 
-	/**
-	 * Lava returns true if it's FluidState is above a certain height and the
-	 * Fluid is Water.
-	 * 
-	 * @return whether the given Fluid can flow into this FluidState
-	 */
-	@Override
-	protected boolean canBeReplacedWith(FluidState fluidState, BlockView blockView, BlockPos blockPos, Fluid fluid, Direction direction) {
-		return false;
-	}
- 
-	/**
-	 * Possibly related to the distance checks for flowing into nearby holes?
-	 * Water returns 4. Lava returns 2 in the Overworld and 4 in the Nether.
-	 */
-	@Override
-	protected int getSpreadDelay(Level world, BlockPos pos, FluidState oldState, FluidState newState) {
-		return 4;
-	}
- 
-	/**
-	 * Water returns 1. Lava returns 2 in the Overworld and 1 in the Nether.
-	 */
-	@Override
-	protected int getDropOff(LevelReader worldView) {
-		return 1;
-	}
- 
-	/**
-	 * Water returns 5. Lava returns 30 in the Overworld and 10 in the Nether.
-	 */
-	@Override
-	public int getTickDelay(LevelReader worldView) {
-		return 5;
-	}
- 
-	/**
-	 * Water and Lava both return 100.0F.
-	 */
-	@Override
-	protected float getExplosionResistance() {
-		return 100.0F;
-	}
+	 	@Override
+    public void animateTick(Level world, BlockPos pos, FluidState state, RandomSource random) {
+        if (!state.isStill() && !(Boolean)state.get(FALLING)) {
+            if (random.nextInt(64) == 0) {
+                world.playLocalSound(
+                        pos.getX() + 0.5,
+                        pos.getY() + 0.5,
+                        pos.getZ() + 0.5,
+                        SoundEvents.BLOCK_BUBBLE_COLUMN_WHIRLPOOL_AMBIENT,  // Bubbling poison/swamp sound
+                        SoundSource.AMBIENT,
+                        random.nextFloat() * 0.25F + 0.75F,
+                        random.nextFloat() + 0.5F,
+                        false
+                );
+            }
+        } else if (random.nextInt(10) == 0) {
+            world.addParticle(
+                    ParticleTypes.UNDERWATER, pos.getX() + random.nextDouble(), pos.getY() + random.nextDouble(), pos.getZ() + random.nextDouble(), 0.0, 0.0, 0.0
+            );
+        }
+    }
+
+		@Nullable
+		@Override
+		public ParticleOptions getDripParticle() {
+				return ParticleTypes.DRIPPING_WATER;
+		}
 }
