@@ -50,16 +50,7 @@ public class ModFogEnvironment extends FogEnvironment {
 
     @Override
     public int getBaseColor(ClientLevel level, Camera camera, int viewDistance, float tickDelta) {
-        BlockPos pos = camera.blockPosition();
-        FluidState fluidState = level.getFluidState(pos);
-        Fluid fluid = fluidState.getType();
-
-        // Acid
-        if (fluid == ModFluids.ACID_STILL || fluid == ModFluids.ACID_FLOWING) {
-            return 0x88C600;
-        }
-
-        return 0x3F76E4;
+			return 0x075800;
     }
 }
 // :::1
