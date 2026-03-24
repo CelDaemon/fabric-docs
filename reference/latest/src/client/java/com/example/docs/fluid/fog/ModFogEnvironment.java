@@ -44,11 +44,6 @@ public class ModFogEnvironment extends FogEnvironment {
     }
 
     @Override
-    public boolean providesColor() {
-        return true;
-    }
-
-    @Override
     public int getBaseColor(ClientLevel level, Camera camera, int viewDistance, float tickDelta) {
 			return 0x075800;
     }
