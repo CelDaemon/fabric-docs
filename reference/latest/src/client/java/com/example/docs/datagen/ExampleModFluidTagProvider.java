@@ -1,15 +1,14 @@
 package com.example.docs.datagen;
 
-import com.example.docs.fluid.FluidTags;
+import java.util.concurrent.CompletableFuture;
 
-import com.example.docs.fluid.ModFluids;
+import net.minecraft.core.HolderLookup;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 
-import net.minecraft.core.HolderLookup;
-
-import java.util.concurrent.CompletableFuture;
+import com.example.docs.fluid.FluidTags;
+import com.example.docs.fluid.ModFluids;
 
 public class ExampleModFluidTagProvider extends FabricTagProvider.FluidTagProvider {
 	public ExampleModFluidTagProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {

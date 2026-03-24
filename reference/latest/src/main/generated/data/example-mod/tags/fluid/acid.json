@@ -1,3 +1,6 @@
 {
-  "values": ["example-mod:acid", "example-mod:acid_flow"]
+  "values": [
+    "example-mod:acid",
+    "example-mod:acid_flow"
+  ]
 }

@@ -1,9 +1,9 @@
 package com.example.docs.mixin;
 
-import net.minecraft.world.level.material.FogType;
-
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.gen.Invoker;
+
+import net.minecraft.world.level.material.FogType;
 
 @Mixin(FogType.class)
 public interface FogTypeInvoker {
