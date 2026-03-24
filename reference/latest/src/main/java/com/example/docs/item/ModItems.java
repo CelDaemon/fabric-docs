@@ -17,10 +17,12 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.AxeItem;
+import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.HoeItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.item.ToolMaterial;
@@ -40,6 +42,7 @@ import com.example.docs.component.ModComponents;
 import com.example.docs.item.armor.GuiditeArmorMaterial;
 import com.example.docs.item.custom.CounterItem;
 import com.example.docs.item.custom.LightningStick;
+import com.example.docs.fluid.ModFluids;
 
 // :::1
 public class ModItems {
@@ -249,6 +252,17 @@ public class ModItems {
 	}
 
 	// :::3
+
+	// :::acid_bucket
+	public static final Item ACID_BUCKET = register(
+			"acid_bucket",
+			props -> new BucketItem(ModFluids.ACID_STILL, props),
+			new Item.Properties()
+					.craftRemainder(Items.BUCKET)
+					.stacksTo(1)
+	)
+	// :::acid_bucket
+	
 	// :::1
 }
 // :::1
