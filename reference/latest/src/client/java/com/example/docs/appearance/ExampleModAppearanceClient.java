@@ -46,9 +46,9 @@ public class ExampleModAppearanceClient implements ClientModInitializer {
 				ModFluids.ACID_FLOWING,
 				new SimpleFluidRenderHandler(
 						// Source texture
-						Identifier.tryParse("minecraft:block/water_still"),
+						SimpleFluidRenderHandler.WATER_STILL,
 						// Flowing texture
-						Identifier.tryParse("minecraft:block/water_flow")
+						SimpleFluidRenderHandler.WATER_FLOWING
 				)
 		);
 
