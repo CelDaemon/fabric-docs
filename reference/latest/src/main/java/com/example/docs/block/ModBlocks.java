@@ -11,8 +11,10 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.FenceBlock;
+import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.SoundType;
@@ -29,10 +31,19 @@ import com.example.docs.block.custom.EngineBlock;
 import com.example.docs.block.custom.PrismarineLampBlock;
 import com.example.docs.block.custom.VerticalSlabBlock;
 import com.example.docs.item.ModItems;
+import com.example.docs.fluid.ModFluids;
 
 // :::1
 public class ModBlocks {
 	// :::1
+
+	// :::7
+	public static final Block ACID = register(
+			"acid",
+			(props) -> new LiquidBlock(ModFluids.ACID_STILL, props),
+			BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)
+	)
+	// :::7
 
 	// :::2
 	public static final Block CONDENSED_DIRT = register(
