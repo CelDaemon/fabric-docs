@@ -33,7 +33,6 @@ import com.example.docs.block.custom.DuplicatorBlock;
 import com.example.docs.block.custom.EngineBlock;
 import com.example.docs.block.custom.PrismarineLampBlock;
 import com.example.docs.block.custom.VerticalSlabBlock;
-import com.example.docs.item.ModItems;
 import com.example.docs.fluid.ModFluids;
 
 // :::1
@@ -45,8 +44,7 @@ public class ModBlocks {
 			"acid",
 			(props) -> new LiquidBlock(ModFluids.ACID_STILL, props),
 			BlockBehaviour.Properties.ofFullCopy(Blocks.WATER),
-			false
-	);
+			false);
 	// :::7
 
 	// :::2
@@ -54,8 +52,7 @@ public class ModBlocks {
 			"condensed_dirt",
 			Block::new,
 			BlockBehaviour.Properties.of().sound(SoundType.GRASS),
-			true
-	);
+			true);
 	// :::2
 
 	// :::3
@@ -63,8 +60,7 @@ public class ModBlocks {
 			"condensed_oak_log",
 			RotatedPillarBlock::new,
 			BlockBehaviour.Properties.of().sound(SoundType.WOOD),
-			true
-	);
+			true);
 	// :::3
 
 	// :::4
@@ -74,64 +70,52 @@ public class ModBlocks {
 			BlockBehaviour.Properties.of()
 					.sound(SoundType.LANTERN)
 					.lightLevel(PrismarineLampBlock::getLuminance),
-			true
-	);
+			true);
 	// :::4
 
 	public static final ResourceKey<Block> ENGINE_BLOCK_KEY = ResourceKey.create(
 			Registries.BLOCK,
-			Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, "engine")
-	);
+			Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, "engine"));
 	public static final Block ENGINE_BLOCK = register(
 			"engine",
 			EngineBlock::new,
 			BlockBehaviour.Properties.of().setId(ENGINE_BLOCK_KEY),
-			true
-	);
+			true);
 
 	// :::5
 	public static final Block COUNTER_BLOCK = register(
 			"counter_block",
 			CounterBlock::new,
 			BlockBehaviour.Properties.of(),
-			true
-	);
+			true);
 	// :::5
 
 	public static final Block STEEL_BLOCK = register(
-			"steel_block", RotatedPillarBlock::new, BlockBehaviour.Properties.of(), true
-	);
+			"steel_block", RotatedPillarBlock::new, BlockBehaviour.Properties.of(), true);
 	public static final Block PIPE_BLOCK = register(
-			"pipe_block", Block::new, BlockBehaviour.Properties.of(), true
-	);
+			"pipe_block", Block::new, BlockBehaviour.Properties.of(), true);
 
 	public static final Block RUBY_BLOCK = register(
-			"ruby_block", Block::new, BlockBehaviour.Properties.of(), true
-	);
+			"ruby_block", Block::new, BlockBehaviour.Properties.of(), true);
 	public static final Block RUBY_STAIRS = register(
-			"ruby_stairs", settings -> new StairBlock(RUBY_BLOCK.defaultBlockState(), settings), BlockBehaviour.Properties.of(), true
-	);
+			"ruby_stairs", settings -> new StairBlock(RUBY_BLOCK.defaultBlockState(), settings),
+			BlockBehaviour.Properties.of(), true);
 	public static final Block RUBY_SLAB = register(
-			"ruby_slab", SlabBlock::new, BlockBehaviour.Properties.of(), true
-	);
+			"ruby_slab", SlabBlock::new, BlockBehaviour.Properties.of(), true);
 	public static final Block RUBY_FENCE = register(
-			"ruby_fence", FenceBlock::new, BlockBehaviour.Properties.of(), true
-	);
+			"ruby_fence", FenceBlock::new, BlockBehaviour.Properties.of(), true);
 
 	public static final Block RUBY_DOOR = register(
-			"ruby_door", settings -> new DoorBlock(BlockSetType.STONE, settings), BlockBehaviour.Properties.of(), true
-	);
+			"ruby_door", settings -> new DoorBlock(BlockSetType.STONE, settings), BlockBehaviour.Properties.of(), true);
 	public static final Block RUBY_TRAPDOOR = register(
-			"ruby_trapdoor", settings -> new TrapDoorBlock(BlockSetType.STONE, settings), BlockBehaviour.Properties.of(), true
-	);
+			"ruby_trapdoor", settings -> new TrapDoorBlock(BlockSetType.STONE, settings), BlockBehaviour.Properties.of(),
+			true);
 
 	public static final Block VERTICAL_OAK_LOG_SLAB = register(
-			"vertical_oak_log_slab", VerticalSlabBlock::new, BlockBehaviour.Properties.of(), true
-	);
+			"vertical_oak_log_slab", VerticalSlabBlock::new, BlockBehaviour.Properties.of(), true);
 
 	// :::family-declaration
-	public static final BlockFamily RUBY_FAMILY =
-			new BlockFamily.Builder(ModBlocks.RUBY_BLOCK)
+	public static final BlockFamily RUBY_FAMILY = new BlockFamily.Builder(ModBlocks.RUBY_BLOCK)
 			.stairs(ModBlocks.RUBY_STAIRS)
 			.slab(ModBlocks.RUBY_SLAB)
 			.fence(ModBlocks.RUBY_FENCE)
@@ -139,22 +123,22 @@ public class ModBlocks {
 	// :::family-declaration
 
 	public static final Block DUPLICATOR_BLOCK = register(
-			"duplicator", DuplicatorBlock::new, BlockBehaviour.Properties.of(), true
-	);
+			"duplicator", DuplicatorBlock::new, BlockBehaviour.Properties.of(), true);
 
 	public static final Block DIRT_CHEST_BLOCK = register(
-					"dirt_chest", DirtChestBlock::new, BlockBehaviour.Properties.of(), true
-	);
+			"dirt_chest", DirtChestBlock::new, BlockBehaviour.Properties.of(), true);
 
 	// :::1
-	private static Block register(String name, Function<BlockBehaviour.Properties, Block> blockFactory, BlockBehaviour.Properties settings, boolean shouldRegisterItem) {
+	private static Block register(String name, Function<BlockBehaviour.Properties, Block> blockFactory,
+			BlockBehaviour.Properties settings, boolean shouldRegisterItem) {
 		// Create a registry key for the block
 		ResourceKey<Block> blockKey = keyOfBlock(name);
 		// Create the block instance
 		Block block = blockFactory.apply(settings.setId(blockKey));
 
 		// Sometimes, you may not want to register an item for the block.
-		// Eg: if it's a technical block like `minecraft:moving_piston` or `minecraft:end_gateway`
+		// Eg: if it's a technical block like `minecraft:moving_piston` or
+		// `minecraft:end_gateway`
 		if (shouldRegisterItem) {
 			// Items need to be registered with a different type of registry key, but the ID
 			// can be the same.

@@ -10,13 +10,14 @@ import com.example.docs.fluid.custom.AcidFluid;
 
 // :::1
 public class ModFluids {
-    public static final FlowingFluid ACID_FLOWING = register("acid_flow", new AcidFluid.Flowing());
-    public static final FlowingFluid ACID_STILL = register("acid", new AcidFluid.Source());
+	public static final FlowingFluid ACID_FLOWING = register("acid_flow", new AcidFluid.Flowing());
+	public static final FlowingFluid ACID_STILL = register("acid", new AcidFluid.Source());
 
-		private static FlowingFluid register(String name, FlowingFluid fluid) {
-				return Registry.register(BuiltInRegistries.FLUID, Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, name), fluid);
-		}
+	private static FlowingFluid register(String name, FlowingFluid fluid) {
+		return Registry.register(BuiltInRegistries.FLUID, Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, name), fluid);
+	}
 
-		public static void initialize() {}
+	public static void initialize() {
+	}
 }
 // :::1

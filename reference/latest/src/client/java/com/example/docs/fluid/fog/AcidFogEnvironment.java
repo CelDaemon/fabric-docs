@@ -1,6 +1,7 @@
 package com.example.docs.fluid.fog;
 
-import com.example.docs.fluid.ModFluids;
+import org.jetbrains.annotations.Nullable;
+
 import net.minecraft.client.Camera;
 import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
@@ -13,39 +14,44 @@ import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.FogType;
 
-import org.jetbrains.annotations.Nullable;
+import com.example.docs.fluid.ModFluids;
 
 // :::1
 public class AcidFogEnvironment extends FogEnvironment {
-    @Override
-    public void setupFog(FogData data, Camera camera, ClientLevel level, float renderDistance, DeltaTracker delta) {
-        data.environmentalStart = -8.0F;
-        data.environmentalEnd = 6.0F;
-    }
+	@Override
+	public void setupFog(FogData data, Camera camera, ClientLevel level, float renderDistance, DeltaTracker delta) {
+		data.environmentalStart = -8.0F;
+		data.environmentalEnd = 6.0F;
+	}
 
-    @Override
-    public boolean isApplicable(@Nullable FogType submersionType, Entity cameraEntity) {
-        if (submersionType != FogType.WATER) return false;
+	@Override
+	public boolean isApplicable(@Nullable FogType submersionType, Entity cameraEntity) {
+		if (submersionType != FogType.WATER) {
+			return false;
+		}
 
-        // Get camera from Minecraft
-        Minecraft minecraft = Minecraft.getInstance();
-        Camera camera = minecraft.gameRenderer.getMainCamera();
-        BlockPos pos = camera.blockPosition();
+		// Get camera from Minecraft
+		Minecraft minecraft = Minecraft.getInstance();
+		Camera camera = minecraft.gameRenderer.getMainCamera();
+		BlockPos pos = camera.blockPosition();
 
-        // Get fluid state from the level
-        ClientLevel level = minecraft.level;
-        if (level == null) return false;
+		// Get fluid state from the level
+		ClientLevel level = minecraft.level;
 
-        FluidState fluidState = level.getFluidState(pos);
-        Fluid fluid = fluidState.getType();
+		if (level == null) {
+			return false;
+		}
 
-        // Check if it's one of our custom water fluids
-        return fluid == ModFluids.ACID_STILL || fluid == ModFluids.ACID_FLOWING;
-    }
+		FluidState fluidState = level.getFluidState(pos);
+		Fluid fluid = fluidState.getType();
 
-    @Override
-    public int getBaseColor(ClientLevel level, Camera camera, int viewDistance, float tickDelta) {
-			return 0x075800;
-    }
+		// Check if it's one of our custom water fluids
+		return fluid == ModFluids.ACID_STILL || fluid == ModFluids.ACID_FLOWING;
+	}
+
+	@Override
+	public int getBaseColor(ClientLevel level, Camera camera, int viewDistance, float tickDelta) {
+		return 0x075800;
+	}
 }
 // :::1
