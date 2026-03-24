@@ -53,3 +53,39 @@ Let's start with creating a new fog environment:
 Then you will need to apply it with a mixin:
 
 @[code transcludeWith=:::1](@/reference/latest/src/client/java/com/example/docs/mixin/client/FogRendererMixin.java)
+
+To cancel the default underwater overlay, create this mixin:
+
+@[code transcludeWith=:::1](@/reference/latest/src/client/java/com/example/docs/mixin/client/ScreenEffectRendererMixin.java)
+
+Of course, remember to add these mixins to the `example-mod.client.mixins.json` like this:
+
+```json
+{
+  "required": true,
+  "package": "com.example.docs.mixin.client",
+  "compatibilityLevel": "JAVA_17",
+  "client": [
+    "ExampleClientMixin",
+    "FogRendererMixin",
+    "GameRendererMixin",
+    "ScreenEffectRendererMixin",
+    "TitleScreenMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
+```
+
+Now add the acid fluid to the water fluid tag, located in `data/minecraft/tags/fluid/water.json`:
+
+```json
+{
+  "replace": false,
+  "values": [
+    "example-mod:acid",
+    "example-mod:acid_flow"
+  ]
+}
+```
