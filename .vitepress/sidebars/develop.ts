@@ -80,7 +80,7 @@ export default [
       },
       {
         text: "develop.items.custom_creative_tabs",
-        link: "/develop/items/custom-item-groups",
+        link: "/develop/items/custom-creative-tabs",
       },
       {
         text: "develop.items.custom_item_interactions",
@@ -214,7 +214,7 @@ export default [
       },
       {
         text: "develop.rendering.gui_graphics",
-        link: "/develop/rendering/draw-context",
+        link: "/develop/rendering/gui-graphics",
       },
       {
         text: "develop.rendering.hud",
@@ -264,12 +264,17 @@ export default [
             link: "/develop/data-generation/translations",
           },
           {
-            text: "develop.data_generation.block_models",
-            link: "/develop/data-generation/block-models",
-          },
-          {
-            text: "develop.data_generation.item_models",
-            link: "/develop/data-generation/item-models",
+            text: "develop.data_generation.models",
+            items: [
+              {
+                text: "develop.data_generation.block_models",
+                link: "/develop/data-generation/block-models",
+              },
+              {
+                text: "develop.data_generation.item_models",
+                link: "/develop/data-generation/item-models",
+              },
+            ],
           },
         ],
       },
@@ -277,25 +282,33 @@ export default [
         text: "develop.data_generation.server",
         items: [
           {
-            text: "develop.data_generation.tags",
-            link: "/develop/data-generation/tags",
-          },
-
-          {
             text: "develop.data_generation.advancements",
             link: "/develop/data-generation/advancements",
           },
           {
-            text: "develop.data_generation.recipes",
-            link: "/develop/data-generation/recipes",
+            text: "develop.data_generation.enchantments",
+            link: "/develop/data-generation/enchantments",
           },
           {
             text: "develop.data_generation.loot_tables",
             link: "/develop/data-generation/loot-tables",
           },
           {
-            text: "develop.data_generation.enchantments",
-            link: "/develop/data-generation/enchantments",
+            text: "develop.data_generation.recipes",
+            link: "/develop/data-generation/recipes",
+          },
+          {
+            text: "develop.data_generation.tags",
+            link: "/develop/data-generation/tags",
+          },
+          {
+            text: "develop.data_generation.world_generation",
+            items: [
+              {
+                text: "develop.data_generation.features",
+                link: "/develop/data-generation/features",
+              },
+            ],
           },
         ],
       },
@@ -354,30 +367,30 @@ export default [
     collapsed: true,
     items: [
       {
-        text: "develop.porting.current",
-        link: "/develop/porting/current",
+        text: "develop.porting.release",
+        link: "/develop/porting/",
       },
       {
-        text: "develop.porting.next",
-        link: "/develop/porting/next",
+        text: "develop.porting.snapshot",
+        link: "/26.1/develop/porting/",
         items: [
           {
-            text: "develop.porting.26.1.fabric_api",
-            link: "/develop/porting/26.1/fabric-api",
+            text: "develop.porting.snapshot.fabric_api",
+            link: "/26.1/develop/porting/fabric-api",
           },
         ],
       },
       {
-        text: "develop.porting.migrating_mappings",
-        link: "/develop/migrating-mappings/",
+        text: "develop.porting.mappings",
+        link: "/develop/porting/mappings/",
         items: [
           {
-            text: "develop.porting.migrating_mappings.loom",
-            link: "/develop/migrating-mappings/loom",
+            text: "develop.porting.mappings.loom",
+            link: "/develop/porting/mappings/loom",
           },
           {
-            text: "develop.porting.migrating_mappings.ravel",
-            link: "/develop/migrating-mappings/ravel",
+            text: "develop.porting.mappings.ravel",
+            link: "/develop/porting/mappings/ravel",
           },
         ],
       },
@@ -390,6 +403,20 @@ export default [
       {
         text: "develop.mixins.bytecode",
         link: "/develop/mixins/bytecode",
+      },
+    ],
+  },
+  {
+    text: "develop.class_tweakers",
+    collapsed: true,
+    items: [
+      {
+        text: "develop.class_tweakers.introduction",
+        link: "/develop/class-tweakers/",
+      },
+      {
+        text: "develop.class_tweakers.access_widening",
+        link: "/develop/class-tweakers/access-widening",
       },
     ],
   },
