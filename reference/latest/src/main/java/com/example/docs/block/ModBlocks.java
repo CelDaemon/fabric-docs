@@ -44,8 +44,9 @@ public class ModBlocks {
 	public static final Block ACID = register(
 			"acid",
 			(props) -> new LiquidBlock(ModFluids.ACID_STILL, props),
-			BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)
-	)
+			BlockBehaviour.Properties.ofFullCopy(Blocks.WATER),
+			false
+	);
 	// :::7
 
 	// :::2

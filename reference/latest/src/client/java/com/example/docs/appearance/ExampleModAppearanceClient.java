@@ -50,9 +50,9 @@ public class ExampleModAppearanceClient implements ClientModInitializer {
 						// Flowing texture
 						Identifier.tryParse("minecraft:block/water_flow")
 				)
-		)
+		);
 
-		BlockRenderLayerMap.putBlock(ModBlocks.ACID, ChunkSectionLayer.TRANSPARENT)
+		BlockRenderLayerMap.putBlock(ModBlocks.ACID, ChunkSectionLayer.TRANSLUCENT);
 		// :::fluid_texture
 	}
 }

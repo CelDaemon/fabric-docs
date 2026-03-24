@@ -284,9 +284,9 @@ public class ModItems {
 			new Item.Properties()
 					.craftRemainder(Items.BUCKET)
 					.stacksTo(1)
-	)
+	);
 	// :::acid_bucket
-	
+
 	// :::1
 }
 // :::1

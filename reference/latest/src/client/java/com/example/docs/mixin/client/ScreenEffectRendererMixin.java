@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 // :::1
 @Mixin(ScreenEffectRenderer.class)
-public class MixinScreenEffectRenderer {
+public class ScreenEffectRendererMixin {
     @Inject(
             method = "renderScreenEffect",
             at = @At(

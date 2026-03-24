@@ -9,10 +9,13 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.FluidTags;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.InsideBlockEffectApplier;
 import net.minecraft.world.entity.InsideBlockEffectType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
@@ -59,7 +62,7 @@ public abstract class AcidFluid extends FlowingFluid {
 		// :::1
 	 	@Override
     public void animateTick(Level world, BlockPos pos, FluidState state, RandomSource random) {
-        if (!state.isStill() && !(Boolean)state.get(FALLING)) {
+        if (!state.isSource() && !(Boolean)state.getValue(FALLING)) {
             if (random.nextInt(64) == 0) {
                 world.playLocalSound(
                         pos.getX() + 0.5,
@@ -100,11 +103,11 @@ public abstract class AcidFluid extends FlowingFluid {
 		protected void entityInside(Level world, BlockPos pos, Entity entity, InsideBlockEffectApplier handler) {
 				handler.apply(InsideBlockEffectType.EXTINGUISH);
 
-				if (!world.isClientSide() && entity instanceof LivingEntity livingEntity) {
+				if (world instanceof ServerLevel serverLevel && entity instanceof LivingEntity livingEntity) {
 						if (world.getGameTime() % 20 == 0) {
-								livingEntity.damage((ServerWorld)world, world.getDamageSources().magic(), 2.0F); // 1 heart/sec
+								livingEntity.hurtServer(serverLevel, world.damageSources().magic(), 2.0F); // 1 heart/sec
 								// BLOOD => Decay (Damage)
-                livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 300, -3));
+                livingEntity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 300, -3));
 						}
 				}
 		}
@@ -161,7 +164,7 @@ public abstract class AcidFluid extends FlowingFluid {
 
 				@Override
 				public int getAmount(FluidState state) {
-						return state.get(LEVEL);
+						return state.getValue(LEVEL);
 				}
 
 				@Override

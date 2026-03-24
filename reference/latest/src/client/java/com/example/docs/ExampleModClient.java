@@ -1,5 +1,9 @@
 package com.example.docs;
 
+import net.fabricmc.fabric.api.event.registry.DynamicRegistries;
+import net.fabricmc.fabric.api.event.registry.FabricRegistryBuilder;
+import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
+
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.particle.EndRodParticle;
 import net.minecraft.network.chat.Component;

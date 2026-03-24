@@ -13,6 +13,8 @@ import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.FogType;
 
+import org.jetbrains.annotations.Nullable;
+
 // :::1
 public class ModFogEnvironment extends FogEnvironment {
     @Override
