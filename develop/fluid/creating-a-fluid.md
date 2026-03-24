@@ -26,4 +26,4 @@ Now, go back to the `AcidFluid` class, and add these methods:
 
 @[code transcludeWith=:::3](@/reference/latest/src/main/java/com/example/docs/fluid/custom/AcidFluid.java)
 
-The fluid now has registered the source and the flowing fluid. We just need a bucket to complete the acid fluid.
+The fluid now has registered the source and the flowing fluid. We just need a bucket to complete the acid fluid, and a legacy block for it. Let's start with the legacy block. Go to the `ModBlocks` class. If you don't have one, follow [this](../blocks/first-block) tutorial.
