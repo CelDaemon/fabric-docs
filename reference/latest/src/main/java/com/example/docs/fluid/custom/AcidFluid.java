@@ -5,8 +5,10 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.FluidTags;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.InsideBlockEffectApplier;
 import net.minecraft.world.entity.InsideBlockEffectType;
@@ -19,12 +21,15 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.gamerules.GameRules;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
 import org.jspecify.annotations.Nullable;
 import net.minecraft.util.RandomSource;
+
+import java.util.Optional;
 
 public abstract class AcidFluid extends FlowingFluid {
 	 	@Override
@@ -35,7 +40,7 @@ public abstract class AcidFluid extends FlowingFluid {
                         pos.getX() + 0.5,
                         pos.getY() + 0.5,
                         pos.getZ() + 0.5,
-                        SoundEvents.BLOCK_BUBBLE_COLUMN_WHIRLPOOL_AMBIENT,  // Bubbling poison/swamp sound
+                        SoundEvents.BUBBLE_COLUMN_WHIRLPOOL_AMBIENT,  // Bubbling poison/swamp sound
                         SoundSource.AMBIENT,
                         random.nextFloat() * 0.25F + 0.75F,
                         random.nextFloat() + 0.5F,
@@ -92,5 +97,61 @@ public abstract class AcidFluid extends FlowingFluid {
 		@Override
 		public boolean isSame(Fluid fluid) {
 				return false;
+		}
+
+		@Override
+		public int getDropOff(LevelReader world) {
+				return 1;
+		}
+
+		@Override
+		public int getTickDelay(LevelReader world) {
+				return 5;
+		}
+
+		@Override
+		public boolean canBeReplacedWith(FluidState state, BlockGetter world, BlockPos pos, Fluid fluid, Direction direction) {
+				return direction == Direction.DOWN && !fluid.is(FluidTags.WATER);
+		}
+
+		@Override
+		protected float getExplosionResistance() {
+				return 100.0F;
+		}
+
+		@Override
+		public Optional<SoundEvent> getPickupSound() {
+				return Optional.of(SoundEvents.BUCKET_FILL);
+		}
+
+		public static class Flowing extends AcidFluid {
+				@Override
+				protected void createFluidStateDefinition(StateDefinition.Builder<Fluid, FluidState> builder) {
+						super.createFluidStateDefinition(builder);
+						builder.add(LEVEL);
+				}
+
+				@Override
+				public int getAmount(FluidState state) {
+						return state.get(LEVEL);
+				}
+
+				@Override
+				public boolean isSource(FluidState state) {
+						return false;
+				}
+		}
+
+		public static class Source extends AcidFluid {
+
+				@Override
+				public int getAmount(FluidState state) {
+						return 8;
+				}
+
+				@Override
+				public boolean isSource(FluidState state) {
+						return true;
+				}
 		}
 }
