@@ -34,5 +34,22 @@ Now, let's add the bucket for acid. If you haven't created the class, called `Mo
 
 @[code transcludeWith=:::acid_bucket](@/reference/latest/src/main/java/com/example/docs/item/ModItems.java)
 
-To add the texture for your fluid, add this line to your `ClientModInitializer`
+Then, add this to the `AcidFluid` class:
+
+@[code transcludeWith=:::bucket](@/reference/latest/src/main/java/com/example/docs/fluid/custom/AcidFluid.java)
+
+To add the texture for your fluid, add this line to your `ClientModInitializer`:
+
 @[code transcludeWith=:::fluid_texture](@/reference/latest/src/client/java/com/example/docs/appearance/ExampleModAppearanceClient.java)
+
+In the next chapter, we will add effects for the fluid
+
+## Adding fluid effects {#adding-fluid-effects}
+
+Let's start with creating a new fog environment:
+
+@[code transcludeWith=:::1](@/reference/latest/src/client/java/com/example/docs/fluid/fog/ModFogEnvironment.java)
+
+Then you will need to apply it with a mixin:
+
+@[code transcludeWith=:::1](@/reference/latest/src/client/java/com/example/docs/mixin/client/FogRendererMixin.java)
