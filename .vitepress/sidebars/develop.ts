@@ -1,4 +1,4 @@
-import { Fabric } from "../types";
+import { Fabric } from "../types.d";
 
 export default [
   {
@@ -29,6 +29,10 @@ export default [
       {
         text: "develop.getting_started.generating_sources",
         link: "/develop/getting-started/generating-sources",
+      },
+      {
+        text: "develop.getting_started.building_mod",
+        link: "/develop/getting-started/building-a-mod",
       },
       {
         text: "develop.getting_started.tips_and_tricks",
@@ -126,6 +130,14 @@ export default [
             text: "develop.blocks.block_entity_renderer",
             link: "/develop/blocks/block-entity-renderer",
           },
+          {
+            text: "develop.blocks.block_containers",
+            link: "/develop/blocks/block-containers",
+          },
+          {
+            text: "develop.blocks.container_menus",
+            link: "/develop/blocks/container-menus",
+          },
         ],
       },
       {
@@ -138,6 +150,10 @@ export default [
     text: "develop.entities",
     collapsed: true,
     items: [
+      {
+        text: "develop.entities.first_entity",
+        link: "/develop/entities/first-entity",
+      },
       {
         text: "develop.entities.attributes",
         link: "/develop/entities/attributes",
@@ -277,6 +293,10 @@ export default [
             text: "develop.data_generation.loot_tables",
             link: "/develop/data-generation/loot-tables",
           },
+          {
+            text: "develop.data_generation.enchantments",
+            link: "/develop/data-generation/enchantments",
+          },
         ],
       },
     ],
@@ -344,8 +364,8 @@ export default [
           {
             text: "develop.porting.26.1.fabric_api",
             link: "/develop/porting/26.1/fabric-api",
-          }
-        ]
+          },
+        ],
       },
       {
         text: "develop.porting.migrating_mappings",
@@ -382,6 +402,10 @@ export default [
         link: "/develop/events",
       },
       {
+        text: "develop.misc.game_rules",
+        link: "/develop/game-rules",
+      },
+      {
         text: "develop.misc.text_and_translations",
         link: "/develop/text-and-translations",
       },
@@ -401,6 +425,10 @@ export default [
         text: "develop.misc.automatic_testing",
         link: "/develop/automatic-testing",
       },
+      {
+        text: "develop.misc.custom_recipe_types",
+        link: "/develop/custom-recipe-types",
+      },
     ],
   },
-] as Fabric.SidebarItem[];
+] satisfies Fabric.SidebarItem[];

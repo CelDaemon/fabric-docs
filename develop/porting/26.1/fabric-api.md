@@ -9,7 +9,7 @@ As Minecraft 26.1 is now unobfuscated, most developers will now be using Mojang'
 
 Below is a list of all the renamed classes, methods, and fields in Fabric API 26.1, the best way to use this list is to search (<kbd>⌘/CTRL</kbd>+<kbd>F</kbd>) this page for the old name and replace it with the new name.
 
-An Intellij IDEA migration map is also available to help automate renaming the classes. After downloading follow the instructions in the [JetBrains documentation](https://www.jetbrains.com/help/idea/migrate.html) to apply it to your project.
+An IntelliJ IDEA migration map is also available to help automate renaming the classes. After downloading follow the instructions in the [JetBrains documentation](https://www.jetbrains.com/help/idea/migrate.html) to apply it to your project.
 
 <DownloadEntry downloadURL="/assets/develop/porting/fabric-api-26-1-migration-map.xml">class migration map</DownloadEntry>
 
@@ -117,6 +117,8 @@ An Intellij IDEA migration map is also available to help automate renaming the c
 - `net/fabricmc/fabric/api/client/rendering/v1/AtlasSourceRegistry` → `SpriteSourceRegistry`
 
 - `net/fabricmc/fabric/api/client/rendering/v1/BlockRenderLayerMap` → `ChunkSectionLayerMap`
+
+- `net/fabricmc/fabric/api/client/rendering/v1/ColorProviderRegistry.BLOCK` → `BlockColorRegistry`
 
 - `net/fabricmc/fabric/api/client/rendering/v1/DrawItemStackOverlayCallback` → `RenderItemDecorationsCallback`
   - `onDrawItemStackOverlay` → `onRenderItemDecorations`
