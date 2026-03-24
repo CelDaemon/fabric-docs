@@ -14,6 +14,7 @@ import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
 
 import com.example.docs.ExampleMod;
 import com.example.docs.fluid.ModFluids;
+import com.example.docs.block.ModBlocks;
 
 public class ExampleModAppearanceClient implements ClientModInitializer {
 	@Override
@@ -50,6 +51,8 @@ public class ExampleModAppearanceClient implements ClientModInitializer {
 						Identifier.tryParse("minecraft:block/water_flow")
 				)
 		)
+
+		BlockRenderLayerMap.putBlock(ModBlocks.ACID, ChunkSectionLayer.TRANSPARENT)
 		// :::fluid_texture
 	}
 }
