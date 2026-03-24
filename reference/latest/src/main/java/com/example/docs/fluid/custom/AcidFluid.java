@@ -32,6 +32,7 @@ import net.minecraft.util.RandomSource;
 import java.util.Optional;
 
 import com.example.docs.fluid.ModFluids;
+import com.example.docs.block.ModBlocks;
 
 // :::1
 public abstract class AcidFluid extends FlowingFluid {
@@ -48,7 +49,7 @@ public abstract class AcidFluid extends FlowingFluid {
 				return ModFluids.ACID_STILL;
 		}
 		// :::3
-		
+		// :::1
 	 	@Override
     public void animateTick(Level world, BlockPos pos, FluidState state, RandomSource random) {
         if (!state.isStill() && !(Boolean)state.get(FALLING)) {
@@ -105,12 +106,12 @@ public abstract class AcidFluid extends FlowingFluid {
 		protected int getSlopeFindDistance(LevelReader world) {
 				return 4;
 		}
-
+		// :::1
 		@Override
 		protected BlockState createLegacyBlock(FluidState state) {
-				return Blocks.AIR.defaultBlockState();
+				return ModBlocks.ACID.defaultBlockState();
 		}
-
+		// :::1
 		@Override
 		public boolean isSame(Fluid fluid) {
 				return false;
@@ -140,6 +141,7 @@ public abstract class AcidFluid extends FlowingFluid {
 		public Optional<SoundEvent> getPickupSound() {
 				return Optional.of(SoundEvents.BUCKET_FILL);
 		}
+		// :::1
 		// :::2
 		public static class Flowing extends AcidFluid {
 				@Override
