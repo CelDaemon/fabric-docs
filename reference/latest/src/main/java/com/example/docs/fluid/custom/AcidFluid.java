@@ -21,7 +21,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -120,7 +120,7 @@ public abstract class AcidFluid extends FlowingFluid {
 		// :::4
 		@Override
 		protected BlockState createLegacyBlock(FluidState state) {
-				return ModBlocks.ACID.defaultBlockState();
+				return ModBlocks.ACID.defaultBlockState().setValue(LiquidBlock.LEVEL, getLegacyLevel(state));
 		}
 		// :::4
 		// :::1
