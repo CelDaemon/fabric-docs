@@ -6,7 +6,6 @@
     "ExampleClientMixin",
     "FogRendererMixin",
     "GameRendererMixin",
-    "ScreenEffectRendererMixin",
     "TitleScreenMixin"
   ],
   "injectors": {
