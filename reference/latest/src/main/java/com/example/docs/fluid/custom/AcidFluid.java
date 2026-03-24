@@ -31,7 +31,19 @@ import net.minecraft.util.RandomSource;
 
 import java.util.Optional;
 
+import com.example.docs.fluid.ModFluids;
+
 public abstract class AcidFluid extends FlowingFluid {
+		@Override
+		public Fluid getFlowing() {
+				return ModFluids.ACID_FLOWING;
+		}
+
+		@Override
+		public Fluid getSource() {
+				return ModFluids.ACID_STILL;
+		}
+		
 	 	@Override
     public void animateTick(Level world, BlockPos pos, FluidState state, RandomSource random) {
         if (!state.isStill() && !(Boolean)state.get(FALLING)) {
