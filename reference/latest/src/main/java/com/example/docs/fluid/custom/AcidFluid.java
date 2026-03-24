@@ -33,7 +33,11 @@ import java.util.Optional;
 
 import com.example.docs.fluid.ModFluids;
 
+// :::1
 public abstract class AcidFluid extends FlowingFluid {
+		// :::1
+
+		// :::3
 		@Override
 		public Fluid getFlowing() {
 				return ModFluids.ACID_FLOWING;
@@ -43,6 +47,7 @@ public abstract class AcidFluid extends FlowingFluid {
 		public Fluid getSource() {
 				return ModFluids.ACID_STILL;
 		}
+		// :::3
 		
 	 	@Override
     public void animateTick(Level world, BlockPos pos, FluidState state, RandomSource random) {
@@ -135,7 +140,7 @@ public abstract class AcidFluid extends FlowingFluid {
 		public Optional<SoundEvent> getPickupSound() {
 				return Optional.of(SoundEvents.BUCKET_FILL);
 		}
-
+		// :::2
 		public static class Flowing extends AcidFluid {
 				@Override
 				protected void createFluidStateDefinition(StateDefinition.Builder<Fluid, FluidState> builder) {
@@ -166,4 +171,7 @@ public abstract class AcidFluid extends FlowingFluid {
 						return true;
 				}
 		}
+		// :::2
+		// :::1
 }
+// :::1
