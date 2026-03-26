@@ -1,7 +1,6 @@
 package com.example.docs.appearance;
 
-import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderingRegistry;
-import net.fabricmc.fabric.api.client.rendering.v1.BlockColorRegistry;
+import java.util.List;
 
 import net.minecraft.client.color.block.BlockTintSource;
 import net.minecraft.client.color.item.ItemTintSources;
@@ -14,11 +13,11 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderingRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.BlockColorRegistry;
 
 import com.example.docs.ExampleMod;
 import com.example.docs.fluid.ModFluids;
-
-import java.util.List;
 
 public class ExampleModAppearanceClient implements ClientModInitializer {
 	@Override
@@ -35,6 +34,7 @@ public class ExampleModAppearanceClient implements ClientModInitializer {
 				if (stateBelow.is(Blocks.GRASS_BLOCK)) {
 					return 0x98FB98; // Color code in hex format
 				}
+
 				return 0xFFDAB9; // Color code in hex format
 			}
 
@@ -49,7 +49,7 @@ public class ExampleModAppearanceClient implements ClientModInitializer {
 		FluidRenderingRegistry.register(
 				ModFluids.ACID_STILL,
 				ModFluids.ACID_FLOWING,
-				new FluidModel.Unbaked(new Material(Identifier.withDefaultNamespace("block/water_still")), new Material(Identifier.withDefaultNamespace("block/water_flow")), new Material(Identifier.withDefaultNamespace("block/water_overlay")), (state)->0x075800)
+				new FluidModel.Unbaked(new Material(Identifier.withDefaultNamespace("block/water_still")), new Material(Identifier.withDefaultNamespace("block/water_flow")), new Material(Identifier.withDefaultNamespace("block/water_overlay")), (state) -> 0x075800)
 		);
 		// :::fluid_texture
 	}

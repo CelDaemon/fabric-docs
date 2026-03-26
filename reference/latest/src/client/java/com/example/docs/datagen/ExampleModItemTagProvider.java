@@ -14,7 +14,6 @@ import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 
 import com.example.docs.ExampleMod;
-import com.example.docs.item.ModItems;
 
 // :::datagen-tags:provider
 public class ExampleModItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
