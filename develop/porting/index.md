@@ -5,6 +5,7 @@ authors:
   - cassiancc
   - ChampionAsh5357
 resources:
+  https://fabricmc.net/2026/03/14/261.html: Fabric for Minecraft 26.1
   ./26.1/fabric-api: Fabric API 26.1 Porting Guide
   https://minecraft.wiki/w/Java_Edition_26.1: Java Edition 26.1 - Minecraft Wiki
   https://github.com/neoforged/.github/blob/main/primers/26.1/index.md: ChampionAsh5357's 1.21.11 -> 26.1 Migration Primers
