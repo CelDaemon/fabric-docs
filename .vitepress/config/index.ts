@@ -63,7 +63,7 @@ export default defineVersionedConfig(
     markdown: {
       config: (md) => {
         // Use the snippet plugin for transclusions
-        () => md.use(snippetPlugin);
+        md.use(snippetPlugin);
         // Use the tabs plugin for... having tabs?
         md.use(tabsMarkdownPlugin);
       },
