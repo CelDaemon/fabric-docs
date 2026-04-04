@@ -24,9 +24,9 @@ import com.example.docs.fluid.ModFluids;
 public class ExampleModAppearanceClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
-		// :::item_tint_source
+		// #region register-item-tint-source
 		ItemTintSources.ID_MAPPER.put(Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, "color"), RainTintSource.MAP_CODEC);
-		// :::item_tint_source
+		// #endregion register-item-tint-source
 		// :::color_provider
 		BlockColorRegistry.register(List.of(new BlockTintSource() {
 			@Override
