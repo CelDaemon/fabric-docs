@@ -8,6 +8,11 @@ import transformFilesPlugin from "../plugins/transformFiles";
 import { Fabric } from "../types.d";
 import { getLocales } from "./i18n";
 import { transformHead, transformItems } from "./transform";
+import { type LanguageRegistration } from "@shikijs/types";
+
+import classtweakerLanguage from "../languages/classtweaker.tmLanguage.json";
+import javaBytecodeLanguage from "../languages/java-bytecode.tmLanguage.json";
+import mcFunctionLanguage from "../languages/mcfunction.tmLanguage.json";
 
 // https://docs.github.com/en/actions/reference/workflows-and-actions/variables#default-environment-variables
 // https://docs.netlify.com/build/configure-builds/environment-variables/#read-only-variables
@@ -71,16 +76,10 @@ export default defineVersionedConfig(
       image: { lazyLoading: true },
       languageAlias: { gradle: "groovy" },
       languages: [
-        ["mcfunction", "syntax-mcfunction/mcfunction.tmLanguage.json"],
-        ["bytecode", "syntax-java-bytecode/java-bytecode.tmLanguage.json"],
-      ].map(
-        ([name, path]) =>
-          async () =>
-            await import(path, { with: { type: "json" } }).then((lang) => ({
-              ...lang.default,
-              name,
-            }))
-      ),
+        classtweakerLanguage,
+        javaBytecodeLanguage,
+        mcFunctionLanguage
+      ] as LanguageRegistration[],
       lineNumbers: true,
       shikiSetup: async (shiki) => {
         await shiki.loadTheme("github-light", "github-dark");

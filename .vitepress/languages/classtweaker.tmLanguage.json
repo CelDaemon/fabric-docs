@@ -1,0 +1,11 @@
+{
+  "name": "classtweaker",
+  "displayName": "Class Tweaker",
+  "scopeName": "source.classtweaker",
+  "patterns": [
+    {
+      "match": "^classTweaker\\s+v\\d+\\s+[a-z]+",
+      "name": "constant.numeric"
+    }
+  ]
+}
