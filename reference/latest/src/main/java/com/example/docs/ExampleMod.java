@@ -1,5 +1,8 @@
 package com.example.docs;
 
+import com.example.docs.worldgen.ExampleModStructurePieceTypes;
+import com.example.docs.worldgen.ExampleModStructureTypes;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -72,6 +75,8 @@ public class ExampleMod implements ModInitializer {
 		// #advanced_tooltip_provider
 		ItemComponentTooltipProviderRegistry.addAfter(DataComponents.DAMAGE, ModComponents.ADVANCED_CUSTOM_COMPONENT);
 		// #advanced_tooltip_provider
+		ExampleModStructureTypes.init();
+		ExampleModStructurePieceTypes.init();
 		//#entrypoint
 	}
 }

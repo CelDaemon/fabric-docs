@@ -65,6 +65,9 @@ public class ExampleModDataGenerator implements DataGeneratorEntrypoint {
 
 		pack.addProvider(ExampleModFluidTagProvider::new);
 
+		pack.addProvider(ExampleModStructureProvider::new);
+		pack.addProvider(ExampleModStructureSetProvider::new);
+
 		// :::datagen-setup:generator
 	}
 	// :::datagen-setup:generator
@@ -81,6 +84,9 @@ public class ExampleModDataGenerator implements DataGeneratorEntrypoint {
 		registryBuilder.add(Registries.CONFIGURED_FEATURE, ExampleModWorldConfiguredFeatures::configure);
 		registryBuilder.add(Registries.PLACED_FEATURE, ExampleModWorldPlacedFeatures::configure);
 		// :::datagen-world:registries
+
+		registryBuilder.add(Registries.STRUCTURE, ExampleModStructureProvider::bootstrap);
+		registryBuilder.add(Registries.STRUCTURE_SET, ExampleModStructureSetProvider::bootstrap);
 
 		// :::datagen-enchantments:bootstrap
 		registryBuilder.add(Registries.ENCHANTMENT, ExampleModEnchantmentGenerator::bootstrap);

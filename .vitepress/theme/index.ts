@@ -15,6 +15,7 @@ import References from "./components/References.vue";
 import VersionReminder from "./components/VersionReminder.vue";
 import VersionSwitcher from "./components/VersionSwitcher.vue";
 import VideoPlayer from "./components/VideoPlayer.vue";
+import RandomSeed from "./components/RandomSeed.vue";
 
 import "./style.css";
 
@@ -31,6 +32,7 @@ export default {
     app.component("ColorSwatch", ColorSwatch);
     app.component("DownloadEntry", DownloadEntry);
     app.component("VideoPlayer", VideoPlayer);
+    app.component("RandomSeed", RandomSeed);
 
     // Versioning Plugin Components
     app.component("VersionSwitcher", VersionSwitcher);
