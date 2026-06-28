@@ -21,7 +21,7 @@ public class ModResourceConditions {
 
 	// #region create
 	private static <T extends ResourceCondition> ResourceConditionType<T> createResourceConditionType(String name, MapCodec<T> codec) {
-		return ResourceConditionType.create(Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, name), codec);
+		return ResourceConditionType.create(ExampleMod.id(name), codec);
 	}
 	// #endregion create
 

@@ -76,5 +76,9 @@ public class ExampleMod implements ModInitializer {
 		// #endregion advanced_tooltip_provider
 		// #region entrypoint
 	}
+
+	public static Identifier id(String path) {
+		return Identifier.fromNamespaceAndPath(MOD_ID, path);
+	}
 }
 // #endregion entrypoint

@@ -22,7 +22,7 @@ public class ModEntityTypes {
 	);
 
 	private static <T extends Entity> EntityType<T> register(String name, EntityType.Builder<T> builder) {
-		ResourceKey<EntityType<?>> key = ResourceKey.create(Registries.ENTITY_TYPE, Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, name));
+		ResourceKey<EntityType<?>> key = ResourceKey.create(Registries.ENTITY_TYPE, ExampleMod.id(name));
 		return Registry.register(BuiltInRegistries.ENTITY_TYPE, key, builder.build(key));
 	}
 

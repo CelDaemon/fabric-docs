@@ -20,7 +20,7 @@ public class ExampleModPotions implements ModInitializer {
 	public static final Holder<Potion> TATER_POTION =
 			Registry.registerForHolder(
 					BuiltInRegistries.POTION,
-					Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, "tater"),
+					ExampleMod.id("tater"),
 					new Potion("tater",
 							new MobEffectInstance(
 									ExampleModEffects.TATER,

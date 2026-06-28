@@ -14,7 +14,7 @@ public class ModFluids {
 	public static final FlowingFluid ACID_STILL = register("acid", new AcidFluid.Source());
 
 	private static FlowingFluid register(String name, FlowingFluid fluid) {
-		return Registry.register(BuiltInRegistries.FLUID, Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, name), fluid);
+		return Registry.register(BuiltInRegistries.FLUID, ExampleMod.id(name), fluid);
 	}
 
 	public static void initialize() {

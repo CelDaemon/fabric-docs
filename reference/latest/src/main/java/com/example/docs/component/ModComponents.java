@@ -16,21 +16,21 @@ public class ModComponents {
 	// #region integer_component
 	public static final DataComponentType<Integer> CLICK_COUNT_COMPONENT = Registry.register(
 			BuiltInRegistries.DATA_COMPONENT_TYPE,
-			Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, "click_count"),
+			ExampleMod.id("click_count"),
 			DataComponentType.<Integer>builder().persistent(Codec.INT).build()
 	);
 	// #endregion integer_component
 
 	public static final DataComponentType<ComponentWithTooltip> COMPONENT_WITH_TOOLTIP = Registry.register(
 			BuiltInRegistries.DATA_COMPONENT_TYPE,
-			Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, "click_count_with_tooltip"),
+			ExampleMod.id("click_count_with_tooltip"),
 			DataComponentType.<ComponentWithTooltip>builder().persistent(ComponentWithTooltip.CODEC).build()
 	);
 
 	// #region custom_component
 	public static final DataComponentType<AdvancedCustomComponent> ADVANCED_CUSTOM_COMPONENT = Registry.register(
 			BuiltInRegistries.DATA_COMPONENT_TYPE,
-			Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, "custom"),
+			ExampleMod.id("custom"),
 			DataComponentType.<AdvancedCustomComponent>builder().persistent(AdvancedCustomComponent.CODEC).build()
 	);
 	// #endregion custom_component

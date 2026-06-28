@@ -15,7 +15,7 @@ public class ModStats {
 	// #endregion stat
 
 	private static Identifier register(String name, StatFormatter formatter) {
-		Identifier id = Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, name);
+		Identifier id = ExampleMod.id(name);
 		Registry.register(BuiltInRegistries.CUSTOM_STAT, name, id);
 		Stats.CUSTOM.get(id, formatter);
 		return id;

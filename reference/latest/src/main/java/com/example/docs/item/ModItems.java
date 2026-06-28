@@ -58,7 +58,7 @@ public class ModItems {
 
 	// #region guidite_incorrect_blocks_tag
 	public static final TagKey<Block> INCORRECT_FOR_GUIDITE_TOOL = TagKey.create(BuiltInRegistries.BLOCK.key(),
-			Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, "incorrect_for_guidite_tool"));
+			ExampleMod.id("incorrect_for_guidite_tool"));
 	// #endregion guidite_incorrect_blocks_tag
 
 	// #region guidite_tool_material
@@ -118,7 +118,7 @@ public class ModItems {
 	// #endregion counter
 	// #region custom_creative_tab
 	public static final ResourceKey<CreativeModeTab> CUSTOM_CREATIVE_TAB_KEY = ResourceKey.create(
-			BuiltInRegistries.CREATIVE_MODE_TAB.key(), Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, "creative_tab")
+			BuiltInRegistries.CREATIVE_MODE_TAB.key(), ExampleMod.id("creative_tab")
 	);
 	public static final CreativeModeTab CUSTOM_CREATIVE_TAB = FabricCreativeModeTab.builder()
 			.icon(() -> new ItemStack(ModItems.GUIDITE_SWORD))
@@ -234,7 +234,7 @@ public class ModItems {
 	// #region mod_items_class
 	public static <T extends Item> T register(String name, Function<Item.Properties, T> itemFactory, Item.Properties settings) {
 		// Create the item key.
-		ResourceKey<Item> itemKey = ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, name));
+		ResourceKey<Item> itemKey = ResourceKey.create(Registries.ITEM, ExampleMod.id(name));
 
 		// Create the item instance.
 		T item = itemFactory.apply(settings.setId(itemKey));

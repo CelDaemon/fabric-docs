@@ -188,11 +188,11 @@ public class ModBlocks {
 	}
 
 	private static ResourceKey<Block> keyOfBlock(String name) {
-		return ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, name));
+		return ResourceKey.create(Registries.BLOCK, ExampleMod.id(name));
 	}
 
 	private static ResourceKey<Item> keyOfItem(String name) {
-		return ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, name));
+		return ResourceKey.create(Registries.ITEM, ExampleMod.id(name));
 	}
 	// #endregion first_block
 

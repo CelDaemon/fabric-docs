@@ -13,11 +13,11 @@ import com.example.docs.ExampleMod;
 // #region stamina
 public class Stamina {
 	private static final AttachmentType<Integer> CURRENT_STAMINA = AttachmentRegistry.create(
-					Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, "current_stamina"),
+					ExampleMod.id("current_stamina"),
 					builder -> builder.syncWith(ByteBufCodecs.INT, AttachmentSyncPredicate.all())
 	);
 	private static final AttachmentType<Integer> MAX_STAMINA = AttachmentRegistry.create(
-					Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, "max_stamina"),
+					ExampleMod.id("max_stamina"),
 					builder -> builder.syncWith(ByteBufCodecs.INT, AttachmentSyncPredicate.all())
 	);
 

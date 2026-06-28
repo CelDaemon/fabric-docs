@@ -23,13 +23,13 @@ public class ExampleModRecipes implements ModInitializer {
 	// #region registration
 	public static final RecipeSerializer<UpgradingRecipe> UPGRADING_RECIPE_SERIALIZER = Registry.register(
 					BuiltInRegistries.RECIPE_SERIALIZER,
-					Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, "upgrading"),
+					ExampleMod.id("upgrading"),
 					new RecipeSerializer<>(UpgradingRecipe.CODEC, UpgradingRecipe.STREAM_CODEC)
 	);
 
 	public static final RecipeType<UpgradingRecipe> UPGRADING_RECIPE_TYPE = Registry.register(
 					BuiltInRegistries.RECIPE_TYPE,
-					Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, "upgrading"),
+					ExampleMod.id("upgrading"),
 					new RecipeType<UpgradingRecipe>() { }
 	);
 
@@ -38,18 +38,18 @@ public class ExampleModRecipes implements ModInitializer {
 	// TODO: recipe book support, requires enum extensions + screen changes
 	public static final RecipeBookCategory UPGRADING_RECIPE_BOOK_CATEGORY = Registry.register(
 					BuiltInRegistries.RECIPE_BOOK_CATEGORY,
-					Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, "upgrading"),
+					ExampleMod.id("upgrading"),
 					new RecipeBookCategory()
 	);
 
 	// #region upgrading_menu_registration
 	public static final MenuType<UpgradingMenu> UPGRADING_MENU_TYPE = Registry.register(
 					BuiltInRegistries.MENU,
-					Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, "upgrading"),
+					ExampleMod.id("upgrading"),
 					new MenuType<>(UpgradingMenu::new, FeatureFlags.VANILLA_SET)
 	);
 
-	private static final Identifier UPGRADING_BLOCK_ID = Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, "upgrading_block");
+	private static final Identifier UPGRADING_BLOCK_ID = ExampleMod.id("upgrading_block");
 
 	public static final UpgradingBlock UPGRADING_BLOCK = Registry.register(
 					BuiltInRegistries.BLOCK,

@@ -13,7 +13,7 @@ import com.example.docs.ExampleMod;
 // #region register_effect
 public class ExampleModEffects implements ModInitializer {
 	public static final Holder<MobEffect> TATER =
-			Registry.registerForHolder(BuiltInRegistries.MOB_EFFECT, Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, "tater"), new TaterEffect());
+			Registry.registerForHolder(BuiltInRegistries.MOB_EFFECT, ExampleMod.id("tater"), new TaterEffect());
 
 	@Override
 	public void onInitialize() {
