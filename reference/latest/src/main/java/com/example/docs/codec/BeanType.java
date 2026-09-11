@@ -5,7 +5,6 @@ import com.mojang.serialization.MapCodec;
 
 import net.minecraft.core.MappedRegistry;
 import net.minecraft.core.Registry;
-import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 
 import com.example.docs.ExampleMod;

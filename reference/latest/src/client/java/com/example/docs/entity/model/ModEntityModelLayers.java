@@ -1,7 +1,6 @@
 package com.example.docs.entity.model;
 
 import net.minecraft.client.model.geom.ModelLayerLocation;
-import net.minecraft.resources.Identifier;
 
 import net.fabricmc.fabric.api.client.rendering.v1.ModelLayerRegistry;
 

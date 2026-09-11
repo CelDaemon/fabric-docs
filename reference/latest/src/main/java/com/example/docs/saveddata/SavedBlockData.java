@@ -2,7 +2,6 @@ package com.example.docs.saveddata;
 
 import com.mojang.serialization.Codec;
 
-import net.minecraft.resources.Identifier;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.saveddata.SavedData;

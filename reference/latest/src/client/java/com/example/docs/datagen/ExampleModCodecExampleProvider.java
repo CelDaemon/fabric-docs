@@ -20,6 +20,7 @@ import net.minecraft.resources.Identifier;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 
+import com.example.docs.ExampleMod;
 import com.example.docs.codec.Bean;
 import com.example.docs.codec.BeanType;
 import com.example.docs.codec.CoolBeansClass;

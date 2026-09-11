@@ -1,7 +1,6 @@
 package com.example.docs.codec;
 
 import net.minecraft.core.Registry;
-import net.minecraft.resources.Identifier;
 
 import com.example.docs.ExampleMod;
 

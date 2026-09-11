@@ -2,8 +2,6 @@ package com.example.docs.conditions;
 
 import com.mojang.serialization.MapCodec;
 
-import net.minecraft.resources.Identifier;
-
 import net.fabricmc.fabric.api.resource.conditions.v1.ResourceCondition;
 import net.fabricmc.fabric.api.resource.conditions.v1.ResourceConditionType;
 import net.fabricmc.fabric.api.resource.conditions.v1.ResourceConditions;

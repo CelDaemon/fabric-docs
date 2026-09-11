@@ -3,7 +3,6 @@ package com.example.docs.datagen;
 import java.util.concurrent.CompletableFuture;
 
 import net.minecraft.core.HolderLookup;
-import net.minecraft.resources.Identifier;
 import net.minecraft.util.Util;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;

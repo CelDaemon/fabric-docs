@@ -2,7 +2,6 @@ package com.example.docs.sound;
 
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.Identifier;
 import net.minecraft.sounds.SoundEvent;
 
 import net.fabricmc.api.ModInitializer;
@@ -20,10 +19,6 @@ public class ExampleModSounds implements ModInitializer {
 
 		// ... the cleaner approach. // [!code focus]
 		CustomSounds.initialize(); // [!code focus]
-	}
-
-	public static Identifier identifierOf(String path) {
-		return ExampleMod.id(path);
 	}
 }
 // #endregion example_mod_sounds

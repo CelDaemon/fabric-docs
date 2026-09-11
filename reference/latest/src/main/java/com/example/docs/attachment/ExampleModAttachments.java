@@ -1,7 +1,6 @@
 package com.example.docs.attachment;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.resources.Identifier;
 
 import net.fabricmc.fabric.api.attachment.v1.AttachmentRegistry;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentSyncPredicate;
