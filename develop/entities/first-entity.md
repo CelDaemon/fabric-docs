@@ -29,7 +29,7 @@ We'll create the class `MiniGolemEntity` for our entity, and start by giving it 
 
 <<< @/reference/latest/src/main/java/com/example/docs/entity/MiniGolemEntity.java#registerclass
 
-Our new entity needs an id; create a new class called `ModEntityTypeIds` and add a resource key for the entity.
+Our new entity needs an ID; create a new class called `ModEntityTypeIds` and add a resource key for the entity:
 
 <<< @/reference/latest/src/main/java/com/example/docs/entity/ModEntityTypeIds.java#ids
 

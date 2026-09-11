@@ -138,7 +138,7 @@ Register the entity too, like we did in the [Creating Your First Entity](./first
 
 <<< @/reference/latest/src/main/java/com/example/docs/entity/ModEntityTypes.java#hot_tater
 
-Make sure to add the id of the new entity to `ModEntityTypeIds`.
+Make sure to add the ID of the new entity to `ModEntityTypeIds`:
 
 <<< @/reference/latest/src/main/java/com/example/docs/entity/ModEntityTypeIds.java#hot_tater
 
