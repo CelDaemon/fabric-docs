@@ -44,7 +44,7 @@ public class EntityAttributesGameTest implements CustomTestMethodInvoker {
 		// #region modifying_entity_attributes
 		attribute.addPermanentModifier(
 				new AttributeModifier(
-						Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, "increased_range"), // the ID of your modifier, should be static so it can be removed
+						ExampleMod.id("increased_range"), // the ID of your modifier, should be static so it can be removed
 						8, // how much to modify it
 						AttributeModifier.Operation.ADD_VALUE // what operator to use, see the wiki page linked above
 				)

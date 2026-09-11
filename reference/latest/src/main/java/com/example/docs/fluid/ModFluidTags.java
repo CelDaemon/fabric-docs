@@ -9,6 +9,6 @@ import com.example.docs.ExampleMod;
 
 // #region tags
 public class ModFluidTags {
-	public static TagKey<Fluid> ACID = TagKey.create(Registries.FLUID, Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, "acid"));
+	public static TagKey<Fluid> ACID = TagKey.create(Registries.FLUID, ExampleMod.id("acid"));
 }
 // #endregion tags

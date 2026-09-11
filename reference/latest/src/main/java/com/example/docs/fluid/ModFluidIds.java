@@ -14,7 +14,7 @@ public class ModFluidIds {
 
 	public static ResourceKey<Fluid> create(String name) {
 		// Create the fluid key.
-		return ResourceKey.create(Registries.FLUID, Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, name));
+		return ResourceKey.create(Registries.FLUID, ExampleMod.id(name));
 	}
 }
 // #endregion register

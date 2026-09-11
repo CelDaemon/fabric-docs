@@ -21,11 +21,11 @@ public class GuiditeArmorMaterial {
 	// #endregion base_durability
 
 	// #region material_key
-	public static final ResourceKey<EquipmentAsset> GUIDITE_ARMOR_MATERIAL_KEY = ResourceKey.create(EquipmentAssets.ROOT_ID, Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, "guidite"));
+	public static final ResourceKey<EquipmentAsset> GUIDITE_ARMOR_MATERIAL_KEY = ResourceKey.create(EquipmentAssets.ROOT_ID, ExampleMod.id("guidite"));
 	// #endregion material_key
 
 	// #region repair_tag
-	public static final TagKey<Item> REPAIRS_GUIDITE_ARMOR = TagKey.create(BuiltInRegistries.ITEM.key(), Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, "repairs_guidite_armor"));
+	public static final TagKey<Item> REPAIRS_GUIDITE_ARMOR = TagKey.create(BuiltInRegistries.ITEM.key(), ExampleMod.id("repairs_guidite_armor"));
 	// #endregion repair_tag
 
 	// #region guidite_armor_material

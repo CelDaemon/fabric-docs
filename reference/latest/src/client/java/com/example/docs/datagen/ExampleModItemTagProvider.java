@@ -22,7 +22,7 @@ import com.example.docs.item.armor.GuiditeArmorMaterial;
 public class ExampleModItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
 	// #endregion datagen_tags_provider
 	// #region datagen_tags_tag_key
-	public static final TagKey<Item> SMELLY_ITEMS = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, "smelly_items"));
+	public static final TagKey<Item> SMELLY_ITEMS = TagKey.create(Registries.ITEM, ExampleMod.id("smelly_items"));
 	// #endregion datagen_tags_tag_key
 	// #region datagen_tags_provider
 	public ExampleModItemTagProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {

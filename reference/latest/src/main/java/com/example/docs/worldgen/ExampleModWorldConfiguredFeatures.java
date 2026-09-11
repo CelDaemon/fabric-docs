@@ -29,14 +29,14 @@ public class ExampleModWorldConfiguredFeatures {
 	public static final ResourceKey<ConfiguredFeature<?, ?>> DIAMOND_BLOCK_VEIN_CONFIGURED_KEY =
 			ResourceKey.create(
 				Registries.CONFIGURED_FEATURE,
-				Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, "diamond_block_vein")
+				ExampleMod.id("diamond_block_vein")
 			);
 	// #endregion datagen_world_configured_key
 
 	public static final ResourceKey<ConfiguredFeature<?, ?>> DIAMOND_TREE_CONFIGURED_KEY =
 			ResourceKey.create(
 					Registries.CONFIGURED_FEATURE,
-					Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, "diamond_tree")
+					ExampleMod.id("diamond_tree")
 			);
 
 	// #region datagen_world_configure_features_class

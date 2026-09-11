@@ -18,7 +18,7 @@ public class BeanTypes {
 
 	// #region bean_types_class
 	public static <T extends Bean> BeanType<T> register(String id, BeanType<T> beanType) {
-		return Registry.register(BeanType.REGISTRY, Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, id), beanType);
+		return Registry.register(BeanType.REGISTRY, ExampleMod.id(id), beanType);
 	}
 }
 // #endregion bean_types_class

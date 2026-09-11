@@ -59,7 +59,7 @@ public class ModItems {
 
 	// #region guidite_incorrect_blocks_tag
 	public static final TagKey<Block> INCORRECT_FOR_GUIDITE_TOOL = TagKey.create(Registries.BLOCK,
-			Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, "incorrect_for_guidite_tool"));
+			ExampleMod.id("incorrect_for_guidite_tool"));
 	// #endregion guidite_incorrect_blocks_tag
 
 	// #region guidite_tool_material
@@ -120,7 +120,7 @@ public class ModItems {
 	// #endregion counter
 	// #region custom_creative_tab
 	public static final ResourceKey<CreativeModeTab> CUSTOM_CREATIVE_TAB_KEY = ResourceKey.create(
-			BuiltInRegistries.CREATIVE_MODE_TAB.key(), Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, "creative_tab")
+			BuiltInRegistries.CREATIVE_MODE_TAB.key(), ExampleMod.id("creative_tab")
 	);
 	public static final CreativeModeTab CUSTOM_CREATIVE_TAB = FabricCreativeModeTab.builder()
 			.icon(() -> new ItemStack(ModItems.GUIDITE_SWORD))

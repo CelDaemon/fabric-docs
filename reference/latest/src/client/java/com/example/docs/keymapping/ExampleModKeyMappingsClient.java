@@ -20,7 +20,7 @@ import com.example.docs.ExampleMod;
 public class ExampleModKeyMappingsClient implements ClientModInitializer {
 	// #region category
 	KeyMapping.Category CATEGORY = KeyMapping.Category.register(
-			Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, "custom_category")
+			ExampleMod.id("custom_category")
 	);
 	// #endregion category
 

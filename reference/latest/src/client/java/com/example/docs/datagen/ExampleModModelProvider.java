@@ -192,7 +192,7 @@ public class ExampleModModelProvider extends FabricModelProvider {
 		// #region custom_item_model
 
 		private static ModelTemplate item(String parent, TextureSlot requiredTextureKeys) {
-			return new ModelTemplate(Optional.of(Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, "item/" + parent)), Optional.empty(), requiredTextureKeys);
+			return new ModelTemplate(Optional.of(ExampleMod.id("item/" + parent)), Optional.empty(), requiredTextureKeys);
 		}
 
 		// #endregion custom_item_model
@@ -207,12 +207,12 @@ public class ExampleModModelProvider extends FabricModelProvider {
 
 		// helper method for creating Models
 		private static ModelTemplate block(String parent, TextureSlot... requiredTextureKeys) {
-			return new ModelTemplate(Optional.of(Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, "block/" + parent)), Optional.empty(), requiredTextureKeys);
+			return new ModelTemplate(Optional.of(ExampleMod.id("block/" + parent)), Optional.empty(), requiredTextureKeys);
 		}
 
 		// helper method for creating Models with variants
 		private static ModelTemplate block(String parent, String variant, TextureSlot... requiredTextureKeys) {
-			return new ModelTemplate(Optional.of(Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, "block/" + parent)), Optional.of(variant), requiredTextureKeys);
+			return new ModelTemplate(Optional.of(ExampleMod.id("block/" + parent)), Optional.of(variant), requiredTextureKeys);
 		}
 
 		// #endregion custom_model

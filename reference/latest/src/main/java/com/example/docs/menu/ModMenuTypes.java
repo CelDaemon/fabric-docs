@@ -26,7 +26,7 @@ public class ModMenuTypes {
 					String name,
 					MenuType.MenuSupplier<T> constructor
 	) {
-		return Registry.register(BuiltInRegistries.MENU, Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, name), new MenuType<>(constructor, FeatureFlagSet.of()));
+		return Registry.register(BuiltInRegistries.MENU, ExampleMod.id(name), new MenuType<>(constructor, FeatureFlagSet.of()));
 	}
 	// #endregion register_menu
 

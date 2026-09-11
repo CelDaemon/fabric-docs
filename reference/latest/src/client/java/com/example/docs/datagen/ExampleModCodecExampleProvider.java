@@ -183,8 +183,8 @@ public class ExampleModCodecExampleProvider extends ExampleModExampleProvider {
 
 		// #region map_codec_data
 		Map<Identifier, Integer> map = Map.of(
-				Identifier.fromNamespaceAndPath("example", "number"), 23,
-				Identifier.fromNamespaceAndPath("example", "the_cooler_number"), 42
+				ExampleMod.id("number"), 23,
+				ExampleMod.id("the_cooler_number"), 42
 		);
 		// #endregion map_codec_data
 

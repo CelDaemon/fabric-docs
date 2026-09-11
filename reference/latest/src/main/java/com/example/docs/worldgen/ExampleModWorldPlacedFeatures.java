@@ -28,14 +28,14 @@ public class ExampleModWorldPlacedFeatures {
 	public static final ResourceKey<PlacedFeature> DIAMOND_BLOCK_ORE_PLACED_KEY =
 			ResourceKey.create(
 				Registries.PLACED_FEATURE,
-				Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, "diamond_block_ore_placed")
+				ExampleMod.id("diamond_block_ore_placed")
 			);
 	// #endregion datagen_world_placed_key
 
 	public static final ResourceKey<PlacedFeature> DIAMOND_TREE_PLACED_KEY =
 			ResourceKey.create(
 				Registries.PLACED_FEATURE,
-							Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, "diamond_tree_placed")
+							ExampleMod.id("diamond_tree_placed")
 			);
 
 	// #region datagen_world_placed_features_class

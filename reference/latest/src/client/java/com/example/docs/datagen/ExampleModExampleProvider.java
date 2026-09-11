@@ -58,7 +58,7 @@ public abstract class ExampleModExampleProvider implements DataProvider {
 										DataProvider.saveStable(
 														cache,
 														x.getValue(),
-														paths.json(Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, x.getKey()))
+														paths.json(ExampleMod.id(x.getKey()))
 										))
 										.toArray(CompletableFuture[]::new)
 		);

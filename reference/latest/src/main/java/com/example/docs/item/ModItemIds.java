@@ -66,7 +66,7 @@ public class ModItemIds {
 	// #region mod_item_ids_class
 	public static ResourceKey<Item> create(String name) {
 		// Create the item key.
-		return ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, name));
+		return ResourceKey.create(Registries.ITEM, ExampleMod.id(name));
 	}
 }
 // #endregion mod_item_ids_class

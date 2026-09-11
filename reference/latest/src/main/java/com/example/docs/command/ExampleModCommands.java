@@ -123,7 +123,7 @@ public class ExampleModCommands implements ModInitializer {
 	public void onInitialize() {
 		// #region register_custom_arg
 		ArgumentTypeRegistry.registerArgumentType(
-				Identifier.fromNamespaceAndPath(ExampleMod.MOD_ID, "block_pos"),
+				ExampleMod.id("block_pos"),
 				BlockPosArgumentType.class,
 				SingletonArgumentInfo.contextFree(BlockPosArgumentType::new)
 		);
