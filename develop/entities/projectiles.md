@@ -138,6 +138,10 @@ Register the entity too, like we did in the [Creating Your First Entity](./first
 
 <<< @/reference/latest/src/main/java/com/example/docs/entity/ModEntityTypes.java#hot_tater
 
+Make sure to add the id of the new entity to `ModEntityTypeIds`.
+
+<<< @/reference/latest/src/main/java/com/example/docs/entity/ModEntityTypeIds.java#hot_tater
+
 Finally, let's use the vanilla `ThrownItemRenderer` in the client initializer:
 
 <<< @/reference/latest/src/client/java/com/example/docs/projectile/ExampleModProjectileClient.java#renderer
