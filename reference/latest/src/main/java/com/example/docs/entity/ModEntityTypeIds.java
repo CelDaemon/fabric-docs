@@ -1,11 +1,11 @@
 package com.example.docs.entity;
 
-import com.example.docs.ExampleMod;
-
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.entity.EntityType;
+
+import com.example.docs.ExampleMod;
 
 // #region ids
 public class ModEntityTypeIds {
