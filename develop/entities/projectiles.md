@@ -4,6 +4,7 @@ description: Learn how to add custom projectiles.
 authors:
   - ayutac
   - cassiancc
+  - CelDaemon
   - ChampionAsh5357
   - dicedpixels
   - Earthcomputer
