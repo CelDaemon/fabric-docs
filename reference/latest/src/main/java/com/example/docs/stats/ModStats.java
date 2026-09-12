@@ -16,7 +16,7 @@ public class ModStats {
 
 	private static Identifier register(String name, StatFormatter formatter) {
 		Identifier id = ExampleMod.id(name);
-		Registry.register(BuiltInRegistries.CUSTOM_STAT, name, id);
+		Registry.register(BuiltInRegistries.CUSTOM_STAT, id, id);
 		Stats.CUSTOM.get(id, formatter);
 		return id;
 	}
