@@ -11,8 +11,4 @@ public class ExampleModNetworking implements ModInitializer {
 	public void onInitialize() {
 		NetworkPayloads.initialize();
 	}
-
-	public static Identifier getId(String input) {
-		return ExampleMod.id(input);
-	}
 }
